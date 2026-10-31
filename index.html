@@ -260,6 +260,7 @@ ul.dot li::before{content:"";position:absolute;left:0;top:.8em;width:9px;height:
       <div class="ctas">
         <a class="btn primary" href="#work" data-show="hiring">See my projects</a>
         <a class="btn" href="#contact" data-show="hiring">Get in touch</a>
+        <a class="btn" href="https://drive.google.com/file/d/1EkIRSeot7_UB-wk2OU5uOz7ZtVd3tLkv/view?usp=sharing" target="_blank" rel="noopener" data-show="hiring">View resume</a>
         <a class="btn primary" href="#services" data-show="client" hidden>See what I build</a>
         <a class="btn" href="#contact" data-show="client" hidden>Get a quote</a>
       </div>
@@ -276,6 +277,7 @@ ul.dot li::before{content:"";position:absolute;left:0;top:.8em;width:9px;height:
         <button type="button" class="chip-q" data-q="q2">Has she deployed AI apps?</button>
         <button type="button" class="chip-q" data-q="q3">Can she handle auth and security?</button>
         <button type="button" class="chip-q" data-q="q7">What else has she built?</button>
+        <button type="button" class="chip-q" data-q="q8">Is there a resume?</button>
         <button type="button" class="chip-q" data-q="q4">What's her favourite food?</button>
       </div>
       <form id="askform" autocomplete="off">
@@ -411,6 +413,17 @@ ul.dot li::before{content:"";position:absolute;left:0;top:.8em;width:9px;height:
         <span class="label">Background</span>
         <h2>Education and <span class="hl">experience</span></h2>
       </div>
+      <div class="bg-block reveal" id="resume">
+        <div>
+          <h3>Resume</h3>
+          <p class="sub">One page, A4 PDF</p>
+          <p class="when">Same details as this page, ready to print</p>
+        </div>
+        <div class="ctas">
+          <a class="btn primary" href="https://drive.google.com/file/d/1EkIRSeot7_UB-wk2OU5uOz7ZtVd3tLkv/view?usp=sharing" target="_blank" rel="noopener">View resume</a>
+          <a class="btn" href="https://drive.google.com/uc?export=download&amp;id=1EkIRSeot7_UB-wk2OU5uOz7ZtVd3tLkv" rel="noopener">Download PDF</a>
+        </div>
+      </div>
       <div class="bg-block reveal" id="education">
         <div>
           <h3>B.Tech</h3>
@@ -473,6 +486,7 @@ ul.dot li::before{content:"";position:absolute;left:0;top:.8em;width:9px;height:
           <div class="links">
             <a href="https://www.linkedin.com/in/aafiya-javed-4ab596292" target="_blank" rel="noopener">LinkedIn</a>
             <a href="https://github.com/aafu22" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://drive.google.com/file/d/1EkIRSeot7_UB-wk2OU5uOz7ZtVd3tLkv/view?usp=sharing" target="_blank" rel="noopener">Resume (PDF)</a>
           </div>
         </div>
       </div>
@@ -501,7 +515,8 @@ ul.dot li::before{content:"";position:absolute;left:0;top:.8em;width:9px;height:
     3: {id:'p-zorvi', name:'Zorvi AI Studio'},
     4: {id:'experience-ibm', name:'IBM SkillsBuild internship'},
     5: {id:'education', name:'Education'},
-    6: {id:'more', name:'More projects'}
+    6: {id:'more', name:'More projects'},
+    7: {id:'resume', name:'Resume'}
   };
   var ANS = {
     q1: {q:'What has she built with RAG?', a:"Two full RAG apps. Helpdesk AI answers customer questions only from a business's own PDFs, DOCX files and FAQs, cites its sources and opens a human ticket when it can't answer [1]. FileWhisperer lets you upload documents, including scanned PDFs through OCR, and ask questions grounded in them [2]."},
@@ -510,9 +525,11 @@ ul.dot li::before{content:"";position:absolute;left:0;top:.8em;width:9px;height:
     q5: {q:'Which tools does she use?', a:"Python and FastAPI on the backend, Next.js or Streamlit on the front, PostgreSQL with pgvector or SQLite for data, and Gemini, OpenRouter or Claude as the language model [1][2][3]."},
     q6: {q:'Where did she study?', a:"She completed a B.Tech at APJ Abdul Kalam Technical University in 2026 with an 8.7 CGPA [5]."},
     q7: {q:'What else has she built?', a:"Beyond the three featured projects she has 25 public repositories on GitHub, from web apps to experiments [6]."},
+    q8: {q:'Is there a resume?', a:"Yes. A one-page A4 resume is in the Background section, and you can view it or download it as a PDF [7]."},
     q4: {q:"What's her favourite food?", a:null}
   };
   var KEYS = [
+    ['q8', /resume|cv\b|curriculum/i],
     ['q6', /degree|educat|college|b\.?tech|cgpa|universit|study|studied|graduat/i],
     ['q7', /other|else|more|github|repo|project/i],
     ['q1', /rag|retriev|document|pdf|knowledge|search/i],
